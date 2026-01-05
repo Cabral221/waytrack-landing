@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WayTrack | Géolocalisation Flotte Sénégal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+
+        /* MISE À JOUR : HERO AVEC IMAGE DE FOND */
+        .hero-gradient {
+            background:
+            /* Dégradé sombre pour faire ressortir le texte blanc */
+            linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.6) 100%),
+            /* Votre image de Dakar */
+            url('assets/Dakar.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        .btn-popular { animation: pulse-green 2s infinite; }
+
+        .floating-dots {
+            background-image: radial-gradient(#10b981 0.8px, transparent 0.8px);
+            background-size: 30px 30px;
+            opacity: 0.15;
+        }
+
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow { animation: spin-slow 12s linear infinite; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden">
+
+    <nav class="fixed w-full z-[100] glass-nav border-b border-slate-100 py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-2xl font-extrabold text-emerald-600 flex items-center gap-2">
+            <div class="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center shadow-lg">
+                <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            </div>
+            WayTrack
+        </div>
+        <div class="hidden md:flex gap-8 font-semibold text-slate-600">
+            <a href="#features" class="hover:text-emerald-600 transition">Fonctionnalités</a>
+            <a href="#tarifs" class="hover:text-emerald-600 transition">Tarifs</a>
+            <a href="#contact" class="hover:text-emerald-600 transition">Contact</a>
+        </div>
+        <a href="https://app.waytrack.com" class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-bold hover:bg-emerald-600 transition shadow-xl">
+            Connexion
+        </a>
+    </nav>
+
+    <section class="hero-gradient relative min-h-screen pt-32 pb-40 px-6 flex flex-col items-center justify-center text-center overflow-hidden">
+        <div class="absolute inset-0 floating-dots z-0"></div>
+
+        <div class="absolute top-20 -right-20 opacity-20 animate-spin-slow hidden lg:block z-0">
+            <svg width="500" height="500" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="90" stroke="#fff" stroke-width="1" stroke-dasharray="10 5"/>
+                <circle cx="100" cy="100" r="60" stroke="#fff" stroke-width="1" stroke-dasharray="5 5"/>
+            </svg>
+        </div>
+
+        <div class="relative z-10" data-aos="fade-up">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                </span>
+                <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full backdrop-blur-sm uppercase tracking-widest border border-emerald-500/20">Système Live à Dakar</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight text-white">
+                Pilotez votre flotte <br> <span class="text-emerald-500 italic font-medium">en toute sérénité.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-12 font-semibold">
+                WayTrack offre aux professionnels du transport une visibilité totale et en temps réel. Sécurisez vos véhicules dès aujourd'hui.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#tarifs" class="w-full md:w-auto bg-emerald-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:shadow-2xl hover:scale-105 transition-all shadow-xl shadow-emerald-900/20">
+                    Démarrer maintenant
+                </a>
+            </div>
+        </div>
+
+        <div class="relative z-10 mt-20 max-w-5xl mx-auto px-4 animate-float" data-aos="zoom-in-up">
+            <div class="bg-slate-900/50 p-2 rounded-3xl shadow-2xl border border-white/10 backdrop-blur-sm">
+                <img src="assets/Dakar.jpg" alt="App Preview" class="rounded-2xl w-full opacity-90">
+            </div>
+        </div>
+
+        <div class="absolute bottom-32 left-1/2 -translate-x-1/2 hidden md:block z-30">
+            <div class="w-[30px] h-[50px] border-2 border-emerald-500/50 rounded-full flex justify-center p-2 backdrop-blur-sm">
+                <div class="w-1 h-2 bg-emerald-500 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-20">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-[calc(100%+1.3px)] h-[100px] fill-white">
+                <path d="M0,120V95.8c58.5,17.4,145.5,29.2,216,21.4c110-12,205-110,350-110s280,90,400,110c70,11.7,146.5,4.1,234-11.4V120H0Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1" data-aos="fade-right">
+                <div class="inline-block px-4 py-1.5 mb-6 text-sm font-bold text-emerald-600 bg-emerald-50 rounded-full uppercase tracking-wider">
+                    Service Public Gratuit
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black mb-6 text-slate-900 leading-tight">
+                    Suivez les bus urbains <br><span class="text-emerald-600">en temps réel.</span>
+                </h2>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                    Pas besoin d'abonnement pour les usagers ! WayTrack intègre les lignes de transport urbain de Dakar. Localisez votre bus sur la carte et ne perdez plus de temps aux arrêts.
+                </p>
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-center gap-3 font-semibold text-slate-700">
+                        <span class="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs">✓</span>
+                        Accès libre sans abonnement
+                    </li>
+                    <li class="flex items-center gap-3 font-semibold text-slate-700">
+                        <span class="w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs">✓</span>
+                        Toutes les lignes majeures disponibles
+                    </li>
+                </ul>
+                <a href="https://app.waytrack.com/map" class="inline-flex items-center gap-2 font-bold text-emerald-600 hover:gap-4 transition-all">
+                    Voir la carte des bus <span>→</span>
+                </a>
+            </div>
+            <div class="flex-1 relative" data-aos="fade-left">
+                <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-slate-900">
+                    <img src="https://via.placeholder.com/600x400/0f172a/ffffff?text=Carte+Bus+Dakar+Live" alt="Suivi bus Dakar" class="w-full">
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="relative py-24 px-6 bg-white z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-black mb-4">Tout ce qu'il vous faut.</h2>
+                <p class="text-slate-500 font-medium text-lg">Des outils puissants pour une gestion simplifiée.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-10 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-2xl transition duration-500 group" data-aos="fade-up">
+                    <div class="text-4xl mb-6 text-emerald-600">🛰️</div>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:text-emerald-600 transition">Temps Réel</h3>
+                    <p class="text-slate-600 font-medium">Suivi GPS ultra-précis toutes les 10 secondes.</p>
+                </div>
+                <div class="p-10 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-2xl transition duration-500 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl mb-6 text-emerald-600">🛡️</div>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:text-emerald-600 transition">Anti-vol</h3>
+                    <p class="text-slate-600 font-medium">Coupure moteur à distance et alertes de mouvement.</p>
+                </div>
+                <div class="p-10 rounded-3xl border border-slate-100 bg-slate-50 hover:bg-white hover:shadow-2xl transition duration-500 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl mb-6 text-emerald-600">📈</div>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:text-emerald-600 transition">Analyses</h3>
+                    <p class="text-slate-600 font-medium">Rapports de consommation et excès de vitesse.</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] translate-y-[1px]">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-[calc(100%+1.3px)] h-[80px] fill-slate-50">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="tarifs" class="relative py-24 px-6 bg-slate-50 z-0">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-black mb-4">WayTrack <span class="text-emerald-600">Manager</span></h2>
+                <p class="text-slate-500 font-medium text-lg">Choisissez le plan adapté à votre activité.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col h-full hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold mb-4">Pack Solo</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900">15 000 F</span>
+                        <span class="text-slate-400 font-bold text-sm">/ an</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm font-medium text-slate-600 border-t pt-6 border-slate-50">
+                        <li class="flex items-center gap-3"><span class="text-emerald-500">✔</span> 1 Véhicule unique</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-500">✔</span> Temps réel 10s</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-500">✔</span> Historique 3 mois</li>
+                        <li class="flex items-center gap-3 text-slate-300">✘ Coupure moteur</li>
+                    </ul>
+                    <a href="#" class="block text-center py-4 rounded-2xl border-2 border-emerald-100 text-emerald-600 font-bold hover:bg-emerald-50 transition">Choisir Solo</a>
+                </div>
+
+                <div class="bg-emerald-600 p-8 rounded-3xl shadow-2xl transform scale-105 z-10 text-white flex flex-col h-full">
+                    <div class="bg-emerald-500 text-[10px] font-black uppercase py-1 px-3 rounded-full self-start mb-4">Recommandé</div>
+                    <h3 class="text-xl font-bold mb-4">Pack Familial</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-white">45 000 F</span>
+                        <span class="text-emerald-100 font-bold text-sm">/ an</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm font-medium border-t pt-6 border-emerald-500/50">
+                        <li class="flex items-center gap-3"><span>✔</span> Jusqu'à 5 Véhicules</li>
+                        <li class="flex items-center gap-3"><span>✔</span> Temps réel & Mobile App</li>
+                        <li class="flex items-center gap-3"><span>✔</span> Coupure moteur à distance</li>
+                        <li class="flex items-center gap-3 text-emerald-400"><span>✔</span> Alertes SOS & Zone</li>
+                    </ul>
+                    <a href="#" class="block text-center py-4 rounded-2xl bg-white text-emerald-600 font-black shadow-xl hover:scale-105 transition btn-popular">Choisir Familial</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col h-full hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold mb-4">Flotte Pro</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900">85 000 F</span>
+                        <span class="text-slate-400 font-bold text-sm">/ an</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm font-medium text-slate-600 border-t pt-6 border-slate-50">
+                        <li class="flex items-center gap-3"><span class="text-emerald-500">✔</span> Jusqu'à 15 Véhicules</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-500">✔</span> Rapports PDF/Excel</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-500">✔</span> Gestion Carburant</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-500">✔</span> Support Prioritaire</li>
+                    </ul>
+                    <a href="#" class="block text-center py-4 rounded-2xl border-2 border-emerald-100 text-emerald-600 font-bold hover:bg-emerald-50 transition">Choisir Pro</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col h-full hover:shadow-lg transition">
+                    <h3 class="text-xl font-bold mb-4">Business+</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900">250 000 F</span>
+                        <span class="text-slate-400 font-bold text-sm">/ an</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm font-medium text-slate-600 border-t pt-6 border-slate-50">
+                        <li class="flex items-center gap-3"><span class="text-emerald-500">✔</span> Jusqu'à 50 Véhicules</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-500">✔</span> API Développeur</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-500">✔</span> Serveur Dédié</li>
+                        <li class="flex items-center gap-3"><span class="text-emerald-500">✔</span> Formation Staff</li>
+                    </ul>
+                    <a href="#" class="block text-center py-4 rounded-2xl border-2 border-emerald-100 text-emerald-600 font-bold hover:bg-emerald-50 transition">Choisir Business</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto bg-slate-900 rounded-[3rem] p-8 md:p-16 overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-emerald-600/10 skew-x-12 translate-x-20"></div>
+
+            <div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1 text-center md:text-left">
+                    <h2 class="text-3xl md:text-5xl font-black text-white mb-6">
+                        Votre flotte dans <br><span class="text-emerald-500">votre poche.</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg mb-10">
+                        Recevez des alertes instantanées sur votre téléphone en cas de mouvement suspect ou de sortie de zone. Disponible partout au Sénégal.
+                    </p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="#" class="bg-white text-slate-900 px-8 py-4 rounded-2xl font-bold flex items-center gap-3 hover:bg-emerald-50 transition">
+                            <span>App Store</span>
+                        </a>
+                        <a href="#" class="bg-emerald-600 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-3 hover:bg-emerald-700 transition">
+                            <span>Google Play</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex-1" data-aos="zoom-in">
+                    <div class="relative mx-auto border-4 border-slate-800 rounded-[2.5rem] w-64 h-[500px] shadow-2xl overflow-hidden bg-slate-800">
+                        <img src="https://via.placeholder.com/300x600/064e3b/ffffff?text=App+Mobile+WayTrack" alt="WayTrack Mobile" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 max-w-5xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-3xl md:text-5xl font-black mb-8 text-slate-900">Prêt à sécuriser vos véhicules ?</h2>
+        <div class="flex flex-col md:flex-row justify-center gap-6">
+            <div class="p-8 bg-slate-50 rounded-3xl flex-1 border border-slate-100 group hover:border-emerald-300 transition">
+                <div class="text-emerald-600 font-bold mb-2 uppercase text-xs tracking-widest">WhatsApp direct</div>
+                <div class="text-2xl font-black text-slate-900 group-hover:text-emerald-600 transition">+221 77 XXX XX XX</div>
+            </div>
+            <div class="p-8 bg-slate-50 rounded-3xl flex-1 border border-slate-100 group hover:border-emerald-300 transition">
+                <div class="text-emerald-600 font-bold mb-2 uppercase text-xs tracking-widest">Support Email</div>
+                <div class="text-2xl font-black text-slate-900 group-hover:text-emerald-600 transition">contact@waytrack.sn</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-white pt-20 pb-10 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-2">
+                <div class="text-3xl font-black text-emerald-500 mb-6 italic">WayTrack.</div>
+                <p class="text-slate-400 max-w-sm mb-8 leading-relaxed">
+                    Leader de la géolocalisation au Sénégal. Protégez vos actifs mobiles avec une technologie fiable et une équipe locale à votre écoute.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-11 h-11 bg-slate-900 rounded-full border border-slate-800 flex items-center justify-center hover:bg-emerald-600 transition">FB</a>
+                    <a href="#" class="w-11 h-11 bg-slate-900 rounded-full border border-slate-800 flex items-center justify-center hover:bg-emerald-600 transition">LN</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-6">Produit</h4>
+                <ul class="space-y-4 text-slate-400 font-medium">
+                    <li><a href="#features" class="hover:text-emerald-500 transition">Fonctionnalités</a></li>
+                    <li><a href="#tarifs" class="hover:text-emerald-500 transition">Tarifs</a></li>
+                    <li><a href="https://app.waytrack.com" class="hover:text-emerald-500 transition">Connexion</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-6">Support</h4>
+                <ul class="space-y-4 text-slate-400 font-medium">
+                    <li><a href="#contact" class="hover:text-emerald-500 transition">Contactez-nous</a></li>
+                    <li><a href="#" class="hover:text-emerald-500 transition">Centre d'aide</a></li>
+                    <li><a href="#" class="hover:text-emerald-500 transition">Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-900 text-center text-slate-500 text-sm font-semibold">
+            © 2026 WayTrack Sénégal. Tous droits réservés. <span class="mx-3">|</span> Dakar, Sénégal
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+</html>
